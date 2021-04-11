@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="assets/style.css" type="text/css">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <aside id="sideMenu" class="sidebar col-3">
+            <h5 id='search-title'>Search your city:</h5>
+            <form id="searchForm" class="form-inline">
+                <input type="text" id="searchTermEntry" class="form-control"> &nbsp;
+                <button type="button" class="btn btn-primary" id="searchButton">
+                  <i class="fas fa-search"></i>
+                </button>
+            </form>
+            <hr>
+            <div class="card">
+                <h6 class="card-header custom-card-header">Your Search History</h6>
+                <div id="resultList" class="list-group-flush">
+                  <!--Search history populates here-->
+                </div>
+              </div>
+        </aside>
+
+        <main class="dashboard col-9">
+            <div class="row">
+            <section id="currentWeatherPane" class="card m-5 col-12">
+                <div class="card-body">
+                <h2 id="currentWeatherHeading" class="card-title">
+                    <span id="currentWeatherCity">City Name</span> &nbsp; <span id="currentWeatherDate"></span> &nbsp; <img id="currentWeatherIcon"></img>
+                </h2>
+                <p id="currentTempLine">Temperature: <span id="currentTempSpan"></span></p>
+                <p id="currentHumidityLine">Humidity: <span id="currentHumiditySpan"></span></p>
+                <p id="currentWindLine">Wind Speed: <span id="currentWindSpan"></span></p>
+                <p id="currentUVLine">UV Index: <span id="currentUVSpan"></span></p>
+                </div>
+            </section>
+            </div>
+            <div class="row">
+            <section class="card m-5 col-12">
+                <div class="card-body">
+                    <h3 class="card-title">5-Day Forecast</h3>
+                    <div class="row" id="fiveDayCardsRow">
+                        <!--Daily forecasts populate here-->
+                    </div>
+                </div>
+            </section>
+        </main>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+</html>
